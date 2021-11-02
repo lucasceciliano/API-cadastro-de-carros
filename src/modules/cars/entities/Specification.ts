@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from 'uuid'
 import { Column, CreateDateColumn, Entity, PrimaryColumn } from "typeorm"
 
 
-@Entity("Specification")
+@Entity("specification")
 class Specification {
     @Column()
     name: string
