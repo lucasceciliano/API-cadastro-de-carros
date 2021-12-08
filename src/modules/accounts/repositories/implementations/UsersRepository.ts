@@ -7,12 +7,12 @@ import { User } from "../../entities/User"
 class UsersRepository implements IUsersRepository {
     private repository: Repository<User>
 
-    constructor(){
+    constructor() {
         this.repository = getRepository(User)
     }
 
-    async create({name, email, driver_license, password, avatar, id}: ICreateUserDTO): Promise<void> {
-        
+    async create({ name, email, driver_license, password, avatar, id }: ICreateUserDTO): Promise<void> {
+
         const user = this.repository.create({
             name,
             email,
@@ -27,7 +27,7 @@ class UsersRepository implements IUsersRepository {
     }
 
     async findByEmail(email: string): Promise<User> {
-        const user = await this.repository.findOne({email})
+        const user = await this.repository.findOne({ email })
         return user
     }
 
@@ -38,4 +38,4 @@ class UsersRepository implements IUsersRepository {
 
 }
 
-export {  UsersRepository }
+export { UsersRepository }
